@@ -25,9 +25,24 @@
             span, button, a {
 
                 color: rgb(255, 255, 0);
-                font-size: 30px;
-                text-shadow: 0 0 50px rgb(255, 255, 140),0 0 150px rgb(255, 255, 140),0 0 20px rgb(255, 255, 140);
                 text-align: center;
+                font-size: 30px;
+            }
+
+            button, a {
+
+                border: 0;
+                background-color: var(--bc);
+                padding: 8px 0;
+                vertical-align: middle;
+                box-sizing: border-box;
+
+                display: inline-block;
+            }
+
+            nav span, nav button, nav a {
+
+                text-shadow: 0 0 50px rgb(255, 255, 140),0 0 150px rgb(255, 255, 140),0 0 20px rgb(255, 255, 140);
             }
 
             nav .here, nav button:hover, nav a:hover {
@@ -47,17 +62,6 @@
             .aniy {
 
                 animation: neon_yellow 5s ease-out infinite;
-            }
-
-            button, a {
-
-                border: 0;
-                background-color: var(--bc);
-                padding: 8px 0;
-                vertical-align: middle;
-                box-sizing: border-box;
-
-                display: inline-block;
             }
 
             .width_1 {
@@ -276,7 +280,7 @@
                 50% {
 
                     color: rgb(100, 100, 0);
-                    text-shadow: 0 0 20px rgb(20, 20, 14000),0 0 50px rgb(20, 20, 0),0 0 5px rgb(20, 20, 0);
+                    text-shadow: 0 0 20px rgb(20, 20, 0),0 0 50px rgb(20, 20, 0),0 0 5px rgb(20, 20, 0);
                 }
 
                 100% {
