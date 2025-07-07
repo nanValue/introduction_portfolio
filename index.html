@@ -22,14 +22,15 @@
                 background-color: var(--bc);
             }
 
-            nav span, nav button {
+            span, button, a {
 
                 color: rgb(255, 255, 0);
                 font-size: 30px;
                 text-shadow: 0 0 50px rgb(255, 255, 140),0 0 150px rgb(255, 255, 140),0 0 20px rgb(255, 255, 140);
+                text-align: center;
             }
 
-            nav .here, nav button:hover {
+            nav .here, nav button:hover, nav a:hover {
 
                 border-bottom: 1px yellow solid;
                 border-right: 1px yellow solid;
@@ -38,18 +39,25 @@
                 animation: dd 0.1s steps(2) 0s 2;
             }
 
+            nav a {
+
+                text-decoration: none;
+            }
+
             .aniy {
 
                 animation: neon_yellow 5s ease-out infinite;
             }
 
-            nav button {
+            button, a {
 
                 border: 0;
                 background-color: var(--bc);
                 padding: 8px 0;
                 vertical-align: middle;
-                display: inline-block; 
+                box-sizing: border-box;
+
+                display: inline-block;
             }
 
             .width_1 {
@@ -240,6 +248,7 @@
 
                     color:#ff0;
                     font-size: 32px;
+                    text-shadow: none;
                     text-decoration: none;
                     text-align: start;
 
@@ -248,8 +257,10 @@
 
                 .descript {
 
-                    color:#aa0;
+                    color:#ff0;
                     text-align: start;
+                    font-size: 20px;
+                    text-shadow: none;
 
                     grid-area: DESCRIPT;
                 }
@@ -307,7 +318,7 @@
 
             <div class = "flex fstart">
 
-                <button class = "width_1 aniy" tabindex="-1"> 首頁 </button>
+                <button class = "width_1 aniy" tabindex="-1" href = "https://nanvalue.github.io/introduction/"> 首頁 </button>
                 <button class = "width_1 aniy here" tabindex="-1"> 各種作品 </button>
             </div>
         </nav>
