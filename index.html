@@ -1,0 +1,398 @@
+<!DOCTYPE HTML>
+<html lang = "zh-Hant">
+
+    <head>
+
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width,initial-scale=1.0">
+
+        <style>
+
+            :root {
+
+                --dio_border_length: 10px; 
+                --odio_border_length: var(--dio_border_length); 
+                --nav_height: 80px;
+                --bc: black;
+            }
+
+            body {
+
+                margin: 0 auto;
+                background-color: var(--bc);
+            }
+
+            nav span, nav button {
+
+                color: rgb(255, 255, 0);
+                font-size: 30px;
+                text-shadow: 0 0 50px rgb(255, 255, 140),0 0 150px rgb(255, 255, 140),0 0 20px rgb(255, 255, 140);
+            }
+
+            nav .here, nav button:hover {
+
+                border-bottom: 1px yellow solid;
+                border-right: 1px yellow solid;
+                border-top: 1px black solid;
+                border-left: 1px black solid;
+                animation: dd 0.1s steps(2) 0s 2;
+            }
+
+            .aniy {
+
+                animation: neon_yellow 5s ease-out infinite;
+            }
+
+            nav button {
+
+                border: 0;
+                background-color: var(--bc);
+                padding: 8px 0;
+                vertical-align: middle;
+                display: inline-block; 
+            }
+
+            .width_1 {
+
+                width: 160px;
+            }
+
+            nav div {
+
+                border: 0px;
+                border-bottom: 1px solid #ff0;
+
+                height: var(--nav_height);
+                width: 80%;
+            }
+
+            .flex {
+
+                display: flex;
+            }
+
+            .fceter {
+
+                justify-content: center;
+                align-items: center;
+            }
+
+            .fstart {
+
+                justify-content: flex-start;
+                align-items: center;
+            }
+
+            .dio {
+
+                position: relative;
+
+                border: 1px solid #ff0;
+
+                width: 80%;
+                
+                margin: auto;
+
+                /*transition: all 0.6s ease-in-out;*/
+
+                .diow {
+
+                    position: absolute;
+
+                    top: var(--dio_border_length);
+                    left: -1px;
+
+                    width: calc(100% + 2px);
+                    height: calc(100% - var(--dio_border_length)*2);
+                    background-color: var(--bc);
+
+                    transition: all 0.6s ease-in-out;
+                }
+
+                .dioh {
+
+                    position: absolute;
+
+                    top: -1px;/*top: calc(-1*var(--dio_border_length));*/
+                    left: var(--dio_border_length);
+
+                    width: calc(100% - var(--dio_border_length)*2);
+                    height: calc(100% + 2px);
+                    background-color: var(--bc);
+
+                    transition: all 0.6s steps(5);
+                }
+
+                .diocont {
+
+                    margin: calc(var(--odio_border_length)*2) calc(var(--odio_border_length)*2);
+                }
+
+                &:hover {
+
+                    --dio_border_length: 20px;
+                    animation: dd 0.1s steps(2) 0s 2;
+                }
+            }
+
+            .mess_top {
+
+                -webkit-clip-path: polygon(0 0, 30% 0, calc(30% + 30px) 30px, 0% 30px);
+                clip-path: polygon(0 0, 30 0, calc(30% + 30px) 30px, 0% 30px);
+                background: linear-gradient(45deg,#ecebbb 17%,#e8fe9a 51%,#fefe7c 76%,#ecebbb 100%);
+
+                height: 30px;
+                text-indent: 12px;
+
+                /*span {
+
+                    color: rgb(0, 20, 20);
+                    text-shadow: 0 0 50px rgb(255, 0, 140),0 0 150px rgb(255, 0, 140),0 0 20px rgb(0, 255, 140);
+                    font-size: 16px;
+                    vertical-align: sub;
+                }*/
+            }
+
+            .mess_bottom {
+
+                -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 20px 100%, 0% calc(100% - 20px));
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 20px 100%, 0% calc(100% - 20px));
+                background: #ff0;
+
+                min-height: 200px;
+				padding: 20px 0;
+
+                /*span {
+
+                    color: black;
+                    text-shadow: 0 0 50px rgb(255, 0, 140),0 0 150px rgb(255, 0, 140),0 0 20px rgb(0, 255, 140);
+                    font-size: 16px;
+                }*/
+
+                iframe {
+
+                    padding: 10px 10px;
+
+                    background: black;
+
+                    border: 1px solid black;
+                }
+            }
+
+            .margin_div {
+                
+                height: 100px;
+            }
+
+            .cyper_card {
+
+                display: grid;
+
+                grid-template-rows: 1fr 1px 1fr 1fr;
+                grid-template-columns: 1fr 1px 1fr 1fr;
+                grid-template-areas: "IMAGE LINE1 TITLE TITLE"  
+                                    "IMAGE LINE1 LINE2 LINE2" 
+                                    "IMAGE LINE1 DESCRIPT DESCRIPT" 
+                                    "IMAGE LINE1 DESCRIPT DESCRIPT";
+
+                place-items: start;
+                align-items: center;
+
+                background-color: black;
+
+                border: #ff0 1px solid;
+
+                box-sizing: border-box;
+
+                .line1, .line2 {background: #ff0;}
+
+                .line1 {
+
+                    width: 1px;
+                    height: 100%;
+
+                    grid-area: LINE1;
+                }
+
+                .line2 {
+
+                    width: 100%;
+                    height: 1px;
+
+                    grid-area: LINE2;
+                }
+
+                .image {
+
+                    grid-area: IMAGE;
+                    place-self: center;
+
+                    width: 80%;
+                    aspect-ratio: 1 / 1;
+                }
+
+                .title, .descript {
+
+                    margin: 0 2rem;
+                }
+
+                .title {
+
+                    color:#ff0;
+                    font-size: 32px;
+                    text-decoration: none;
+                    text-align: start;
+
+                    grid-area: TITLE;
+                }
+
+                .descript {
+
+                    color:#aa0;
+                    text-align: start;
+
+                    grid-area: DESCRIPT;
+                }
+            }
+
+            @keyframes neon_yellow {
+
+                0% {
+
+                    color: rgb(255, 255, 0);
+                    text-shadow: 0 0 50px rgb(255, 255, 140),0 0 150px rgb(255, 255, 140),0 0 20px rgb(255, 255, 140);
+                }
+
+                50% {
+
+                    color: rgb(100, 100, 0);
+                    text-shadow: 0 0 20px rgb(20, 20, 14000),0 0 50px rgb(20, 20, 0),0 0 5px rgb(20, 20, 0);
+                }
+
+                100% {
+
+                    color: rgb(255, 255, 0);
+                    text-shadow: 0 0 50px rgb(255, 255, 140),0 0 150px rgb(255, 255, 140),0 0 20px rgb(255, 255, 140);
+                }
+            }
+
+            @keyframes dd {
+
+                0% {
+
+                    border-color: transparent;
+                }
+
+                1% {
+
+                    border-color: black #ff0 #ff0 black;
+                }
+
+                50% {
+
+                    border-color: black #ff0 #ff0 black;
+                }
+
+                51% {
+
+                    border-color: transparent;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <nav class = "flex fceter">
+
+            <div class = "flex fstart">
+
+                <button class = "width_1 aniy" tabindex="-1"> 首頁 </button>
+                <button class = "width_1 aniy here" tabindex="-1"> 各種作品 </button>
+            </div>
+        </nav>
+
+        <main>
+            0010001001
+            <div class = "dio">
+
+                <div class = "diow">
+
+                </div>
+                <div class = "dioh flex fceter">
+
+                </div>
+
+                <div class = "diocont">
+
+                    <div class = "mess_top">
+
+                        <span>最新作品</span>
+                    </div>
+
+                    <div class = "mess_bottom flex fceter">
+
+                        <div class = "cyper_card">
+
+                            <img class = "image" src = "https://iili.io/FYeMvLu.png"/>
+                            <div class = "line1"></div>
+                            <div class = "line2"></div>
+                            <a class = "title" href = "https://nanvalue.github.io/ACDGX/"> 𝔸ℂ𝔻𝔾𝕏◈創世曙光 形象網站</a>
+                            <span class = "descript"> 第一個自行設計的網站 </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            498748469
+            <div class = "dio">
+
+                <div class = "diow">
+
+                </div>
+                <div class = "dioh flex fceter">
+
+                </div>
+
+                <div class = "diocont">
+
+                    <div class = "mess_top">
+
+                        <span>JaveScript</span>
+                    </div>
+
+                    <div class = "mess_bottom flex fceter">
+
+                        <iframe src="https://itch.io/embed/3382874" width="552" height="167" frameborder="0"><a href="https://xcv145336.itch.io/canvas-tank">Canvas Tank(JS, render by &lt;canvas&gt;) ver 0.1 by xcv145336</a></iframe>
+                    </div>
+                </div>
+            </div>
+            586787678
+            <div class = "dio">
+
+                <div class = "diow">
+
+                </div>
+                <div class = "dioh flex fceter">
+
+                </div>
+
+                <div class = "diocont">
+
+                    <div class = "mess_top">
+
+                        <span>HTML + css + JaveScript</span>
+                    </div>
+
+                    <div class = "mess_bottom flex fceter">
+
+						<iframe height="600" width="80%" height="167" scrolling="no" title="Geometry" src="https://codepen.io/wqhofbcx-the-decoder/embed/bNNZRoB?default-tab=css%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+							See the Pen <a href="https://codepen.io/wqhofbcx-the-decoder/pen/bNNZRoB">
+							Geometry</a> by 唐鴻廷 (<a href="https://codepen.io/wqhofbcx-the-decoder">@wqhofbcx-the-decoder</a>)
+							on <a href="https://codepen.io">CodePen</a>.
+						</iframe>
+					</div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
